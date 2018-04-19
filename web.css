@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  align-items: center;
+  background: #222;
+  color: #fff;
+  display: flex;
+  font: 30px/1.375 "Lato", arial, sans-serif;
+  flex-flow: column nowrap;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+
+
+#search {
+  align-items: center;
+  background: #151515;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+  padding: 0.5em 0.5em 0.5em 1em;
+  transition: all 0.5s;
+  width: 500px;
+}
+#search:hover, #search:focus {
+  background: #101010;
+}
+#search button,
+#search input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  outline: 0;
+}
+#search button {
+  cursor: pointer;
+  padding: 0 0.25em;
+}
+#search input {
+  flex: 1;
+}
+#search input::-webkit-input-placeholder {
+  color: #fff;
+}
+#search input:-ms-input-placeholder {
+  color: #fff;
+}
+#search input::-ms-input-placeholder {
+  color: #fff;
+}
+#search input::placeholder {
+  color: #fff;
+}
+#search .spinner {
+  -webkit-animation: spinner 1s infinite linear;
+          animation: spinner 1s infinite linear;
+  display: none;
+  padding: 0 0.25em;
+}
+
+#search.loading button {
+  display: none;
+}
+#search.loading .spinner {
+  display: block;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.crop {
+    width: 450px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    border: 3px solid #000;
+}
+
+.crop img {
+  display: block;
+  max-height:400px;
+  width: auto;
+  height: auto;
+  filter: blur(3px);
+  opacity: 0.6;
+}
+
+
+
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    background-color: #111;
+}
+
+
+#first.fade {
+        opacity: 1;
+        transition: opacity 0.5s;
+}
+
+#first {
+        opacity: 0;
+}
