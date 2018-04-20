@@ -9,11 +9,13 @@ window.onload = function() {
                 setTimeout(function() {
                         search.classList.remove('loading');
                 }, 1000);
-                var slideSource = document.getElementById('first');
+                var slideSource = document.getElementById('1');
                 slideSource.classList.toggle('fade');
-                var slideSource = document.getElementById('second');
+                var slideSource = document.getElementById('2');
                 slideSource.classList.toggle('fade');
-                var slideSource = document.getElementById('third');
+                var slideSource = document.getElementById('3');
+                slideSource.classList.toggle('fade');
+                var slideSource = document.getElementById('4');
                 slideSource.classList.toggle('fade');
         }
 
