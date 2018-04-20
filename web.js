@@ -11,6 +11,10 @@ window.onload = function() {
                 }, 1000);
                 var slideSource = document.getElementById('first');
                 slideSource.classList.toggle('fade');
+                var slideSource = document.getElementById('second');
+                slideSource.classList.toggle('fade');
+                var slideSource = document.getElementById('third');
+                slideSource.classList.toggle('fade');
         }
 
         button.addEventListener('click', loading);
@@ -21,5 +25,5 @@ window.onload = function() {
 
 
 
-      
+
 };
