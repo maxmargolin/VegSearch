@@ -34,7 +34,7 @@
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 4  50px) {
   .column {
     -ms-flex: 100%;
     flex: 100%;
@@ -143,16 +143,17 @@ body {
   }
 }
 
-.crop {
+.item {
   overflow: hidden;
   position: relative;
   text-align: center;
   color: white;
   border-radius: 10px;
   border: 3px solid #000;
+  opacity: 0;
 }
 
-.crop img {
+.item img {
   display: block;
   max-height: 400px;
   width: auto;
@@ -162,7 +163,7 @@ body {
   transition: transform .2s;
 }
 
-.crop img:hover {
+.item img:hover {
   -ms-transform: scale(1.1);
   /* IE 9 */
   -webkit-transform: scale(1.1);
@@ -188,11 +189,7 @@ body {
   font-size: smaller;
 }
 
-.crop.fade {
+.item.fade {
   opacity: 1;
   transition: opacity 0.5s;
-}
-
-.crop {
-  opacity: 0;
 }

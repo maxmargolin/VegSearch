@@ -9,14 +9,12 @@ window.onload = function() {
                 setTimeout(function() {
                         search.classList.remove('loading');
                 }, 1000);
-                var slideSource = document.getElementById('1');
-                slideSource.classList.toggle('fade');
-                var slideSource = document.getElementById('2');
-                slideSource.classList.toggle('fade');
-                var slideSource = document.getElementById('3');
-                slideSource.classList.toggle('fade');
-                var slideSource = document.getElementById('4');
-                slideSource.classList.toggle('fade');
+
+                var items = document.getElementsByClassName("item");
+                var i;
+                for (i = 0; i < items.length; i++) {
+                        items[i].classList.toggle('fade');
+                }
         }
 
         button.addEventListener('click', loading);
