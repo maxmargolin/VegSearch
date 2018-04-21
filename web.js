@@ -8,34 +8,45 @@ window.onload = function() {
 
 
 
-
-
+                var items = document.getElementsByClassName('item');
+                while (items[0]) {
+                        items[0].classList.remove('fade');
+                        items[0].parentNode.removeChild(items[0]);
+                }
 
                 var searched = document.getElementById("input").value;
                 $.getJSON('http://165.227.172.221:3222/' + searched, function(data) {
-                        var names = document.getElementsByClassName("centered");
-                        var sources = document.getElementsByClassName("bottom");
-                        var n;
-                        for (n = 0; n < names.length && data[n] != undefined; n++) {
-                                names[n].innerHTML = data[n]["title"];
-                                sources[n].innerHTML = data[n]["source"];
+                        for (var i = 0; i < data.length; i++) {
+                                if (data[i]["thumbnail"] != "") { //only if theres a thumbnail
+                                        var item = document.createElement("div");
+                                        var column = document.createElement("div");
+                                        item.classList.add("item");
+                                        column.classList.add("column");
+                                        column.appendChild(item);
+                                        document.createElement("div");
+                                        var link = document.createElement("a");
+                                        link.href = data[i]["url"];
+                                        link.setAttribute("target", "_blank");
+                                        var img = document.createElement("img");
+                                        img.src = data[i]["thumbnail"];
+                                        var title = document.createElement("div");
+                                        title.classList.add("center");
+                                        title.innerHTML = data[i]["title"];
+                                        var credit = document.createElement("small");
+                                        credit.innerHTML = data[i]["source"];
+                                        credit.classList.add("bottom");
+                                        link.appendChild(img);
+                                        link.appendChild(title);
+                                        link.appendChild(credit);
+                                        item.appendChild(link);
+                                        document.getElementsByClassName("row")[0].appendChild(column);
 
-                        }
 
+                                        setTimeout(function(item) {
+                                                item.classList.add('fade');
+                                        }, 200, item);
 
-
-
-                        var items = document.getElementsByClassName("item");
-                        var i;
-                        //reappear
-                        for (i = 0; i < items.length && data[n] != undefined; i++) {
-                                items[i].classList.remove('fade');
-                                var sub = items[i].getElementsByTagName("a")[0].href = data[i]["url"];
-                                var sub = items[i].getElementsByTagName("img")[0].src = data[i]["thumbnail"];
-                                setTimeout(function(item) {
-                                        item.classList.add('fade');
-                                }, 200, items[i]);
-
+                                }
                         }
 
                         //temporary to show cute search loadin

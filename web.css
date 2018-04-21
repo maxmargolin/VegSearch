@@ -6,8 +6,6 @@
   box-sizing: border-box;
 }
 
-
-
 .row {
   display: -ms-flexbox;
   /* IE10 */
@@ -17,13 +15,8 @@
   flex-wrap: wrap;
   padding: 0 4px;
 }
-
 /* Create four equal columns that sits next to each other */
-
-
-
 /* Responsive layout - makes a two column-layout instead of four columns */
-
 @media screen and (max-width: 450px) {
   .column {
     -ms-flex: 50%;
@@ -31,10 +24,8 @@
     max-width: 50%;
   }
 }
-
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-
-@media screen and (max-width: 4  50px) {
+@media screen and (max-width: 450px) {
   .column {
     -ms-flex: 100%;
     flex: 100%;
@@ -66,11 +57,13 @@ body {
   width: 500px;
 }
 
-#search:hover, #search:focus {
+#search:focus,
+#search:hover {
   background: #101010;
 }
 
-#search button, #search input {
+#search button,
+#search input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -120,23 +113,23 @@ body {
 #search.loading .spinner {
   display: block;
 }
-
 @-webkit-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
-
 @keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -160,11 +153,10 @@ body {
   height: auto;
   filter: blur(3px);
   opacity: 0.6;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .item img:hover {
-
   /*filter: blur(2.5px);
   opacity: 0.63;*/
   -ms-transform: scale(1.1);
@@ -174,7 +166,7 @@ body {
   transform: scale(1.1);
 }
 
-.centered {
+.center {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -186,8 +178,8 @@ body {
 .bottom {
   position: absolute;
   top: 95%;
-  left: 92.5%;
-  transform: translate(-50%, -50%);
+  right: 0;
+  transform: translate(0%, -50%);
   color: Black;
   font-size: smaller;
 }
