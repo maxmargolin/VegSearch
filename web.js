@@ -14,9 +14,11 @@ window.onload = function() {
                 var searched = document.getElementById("input").value;
                 $.getJSON('http://165.227.172.221:3222/' + searched, function(data) {
                         var names = document.getElementsByClassName("centered");
+                        var sources = document.getElementsByClassName("bottom");
                         var n;
-                        for (n = 0; n < names.length && data[n]!=undefined ; n++) {
-                                names[n].innerHTML = data[n]["recipeHeaderTitle"];
+                        for (n = 0; n < names.length && data[n] != undefined; n++) {
+                                names[n].innerHTML = data[n]["title"];
+                                sources[n].innerHTML = data[n]["source"];
 
                         }
 
@@ -26,10 +28,10 @@ window.onload = function() {
                         var items = document.getElementsByClassName("item");
                         var i;
                         //reappear
-                        for (i = 0; i < items.length; i++) {
+                        for (i = 0; i < items.length && data[n] != undefined; i++) {
                                 items[i].classList.remove('fade');
-                                var sub = items[i].getElementsByTagName("a")[0].href=data[i]["recipeHeaderLink"];
-                                var sub = items[i].getElementsByTagName("img")[0].src=data[i]["recipeThumbnailURL"];
+                                var sub = items[i].getElementsByTagName("a")[0].href = data[i]["url"];
+                                var sub = items[i].getElementsByTagName("img")[0].src = data[i]["thumbnail"];
                                 setTimeout(function(item) {
                                         item.classList.add('fade');
                                 }, 200, items[i]);

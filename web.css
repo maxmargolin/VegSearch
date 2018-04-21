@@ -164,6 +164,9 @@ body {
 }
 
 .item img:hover {
+
+  /*filter: blur(2.5px);
+  opacity: 0.63;*/
   -ms-transform: scale(1.1);
   /* IE 9 */
   -webkit-transform: scale(1.1);
